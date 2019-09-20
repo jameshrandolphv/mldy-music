@@ -1,0 +1,146 @@
+.landing {
+  /* background-color: #EFEFEF; */
+  background-color: rgb(0, 0, 0);
+  height: 100%;
+}
+
+.navbar {
+  background-color: rgb(38, 38, 38);
+  height: 7vh;
+  /* width: 100%; */
+  padding-left: 10px;
+}
+
+.logo_container {
+  padding: 5px;
+}
+
+.logo {
+  height: 100%;
+  width: auto;
+}
+
+.right {
+  margin-right: 3vh;
+}
+.fa-twitter-square {
+  /* background: #38A1F3; */
+ color: #38A1F3;
+}
+.fa-twitter-square:hover {
+  /* background: #55ACEE; */
+  /* color: white; */
+  opacity: 0.7;
+}
+
+.landing_header {
+  background-image: url(../../../assets/images/concert-wide-blurred.png);
+  background-color: rgb(38, 38, 38);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: none;
+  min-height: 100px;
+
+  text-align: center;
+  z-index: 100;
+}
+
+.landing_header_title h3 {
+  color: #EFEFEF;
+  /* text-shadow: 2px 2px 2px rgb(38, 38, 38); */
+  font-size: 3em;
+  font-weight: 300;
+}
+
+.landing_header_text h4 {
+  color: #EFEFEF;
+  /* text-shadow: 2px 2px 2px rgb(38, 38, 38); */
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.landing_content {
+  background-color: rgb(0, 0, 0);
+  color: #EFEFEF;
+  font-size: 1.3em;
+}
+
+.landing_content_row h4 {
+  font-weight: 200;
+  font-size: 1.5em;
+}
+
+.email_bar {
+  background-color: rgb(0, 0, 0);
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #EFEFEF;
+  padding: 10px;
+}
+
+.email_form {
+  background-color: transparent;
+}
+
+.email_form_input {
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  font-weight: 400;
+  color: #EFEFEF;
+}
+
+.submit_email_button {
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 400;
+  color: #EFEFEF;
+  border: 0px solid #EFEFEF;
+  background-color: #7A76A9;
+  /* margin: 10px; */
+  /* padding: 10px; */
+}
+
+.twitter_button {
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 400;
+  color: #EFEFEF;
+  border: 0px solid #EFEFEF;
+  background-color: rgb(8, 160, 233);
+  margin: 10px;
+  padding: 10px;
+}
+
+/* a {
+  text-decoration: none;
+  color: #EFEFEF;
+} */
+
+.mat-stroked-button {
+  color: white;
+  border: 1px solid white;
+  margin-right: 1vw;
+}
+.mat-stroked-button:hover {
+  opacity: .8;
+}
+.mat-button {
+  color: white;
+  background-color: #7A76A9;
+  margin-right: 1.8vw;
+}
+/* UNCOMMENT the mat-button:hover when enabling the create account button */
+/* .mat-button:hover {
+  opacity: .8;
+} */
+a {
+  color: #7A76A9;
+}
+/* a:hover {
+ 
+} */
+a:visited {
+  text-decoration: underline;
+  color: #7A76A9;
+}

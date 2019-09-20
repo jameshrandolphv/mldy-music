@@ -1,0 +1,50 @@
+<div class="discover" fxLayout="column" fxLayoutAlign="start stretch" (click)="closeDropdown()" fxFlex="100">
+  <app-nav-bar class="navbar" fxLayout="row" fxLayoutAlign="center stretch" fxFlex="7"></app-nav-bar>
+
+  <div class="page-header" fxLayout="column" fxLayoutAlign="start stretch" fxFlex="20">
+    <div class="page-header-title" fxLayout="row" fxLayoutAlign="start">
+      <h1>Discover</h1>
+    </div>
+    <div class="page-header-options" fxLayout="row" fxLayoutAlign="start center" fxFlex="fill">
+      <div class="page-header-option" fxLayout="row" fxLayoutAlign="start center" fxFlex="50">
+        <!-- <mat-slide-toggle>Online Only</mat-slide-toggle> -->
+      </div>
+      <div class="page-header-option" fxLayout="row" fxLayoutAlign="end center" fxFlex="50">
+        <div *ngIf="!this.dropdownOpened" class="clickable" fxLayout="column" fxLayoutAlign="start stretch"
+          (click)="toggleDropdown($event, this.filterBy)">
+          <h4 fxLayout="row" fxLayoutAlign="center center">
+            <mat-icon>filter_list</mat-icon> {{this.filterBy}}
+          </h4>
+        </div>
+        <div class="page-header-option-dropdown" *ngIf="this.dropdownOpened" fxLayout="column"
+          fxLayoutAlign="start stretch">
+          <div *ngFor="let filterOption of this.filterOptions" class="page-header-option-dropdown-option clickable"
+            (click)="toggleDropdown($event, filterOption)">
+            <h4>{{filterOption}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="chat_popup">
+    <app-chat-popup></app-chat-popup>
+  </div> -->
+
+  <div class="page-content" fxFlex="fill" fxLayout="row" fxLayoutAlign="start stretch">
+    <div fxLayout="column" fxLayoutAlign="start stretch" fxFlex="75" fxFlex.lt-md="100">
+      <app-track class="track"
+        *ngFor="let track of this.tracksOnPage"
+        [track]="track" fxFlex="40"></app-track>
+    </div>
+
+
+    <!-- <div class="discover-side-panel" fxFlex="25" fxLayout="column" fxLayoutAlign="stretch stretch" fxShow.lt-md="false">
+      <div class="hide_side_panel clickable" (click)="hideSidePanel()" *ngIf="this.sidePanelVisible"><h4>Hide</h4></div>
+      <div class="show_side_panel clickable" (click)="showSidePanel()" *ngIf="!this.sidePanelVisible"><h4>Show Chats</h4></div>
+      <app-side-panel *ngIf="this.sidePanelVisible"></app-side-panel>
+    </div> -->
+
+  </div>
+
+</div>

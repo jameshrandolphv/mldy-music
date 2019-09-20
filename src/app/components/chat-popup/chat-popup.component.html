@@ -1,0 +1,52 @@
+<div class="chat-popup" *ngIf="chatPopupExpanded" fxLayout="column" fxLayoutAlign="start stretch">
+
+  <div class="chat_popup_title clickable" fxLayout="row" fxLayoutAlign="start center" fxFlex="10" (click)="toggleChatExpanded()">
+    <div fxFlex="10" class="active_indicator_container" fxLayout="column" fxLayoutAlign="center center">
+      <div class="active_indicator">
+
+      </div>
+    </div>
+    <h4 class="chat_name" fxFlex="80">
+      Malcom Grant
+    </h4>
+    <h4 class="chat_min" fxFlex="10">
+      [ - ]
+    </h4>
+  </div>
+
+  <div class="chat_popup_content" fxFlex="75" fxLayout="column" fxLayoutAlign="end stretch">
+    <div class="self_message" fxFlex="15" fxLayout="row" fxLayoutAlign="center center">
+      <h4>What's up</h4>
+    </div>
+    <div class="other_message" fxFlex="15" fxLayout="row" fxLayoutAlign="center center">
+      <h4>Yo</h4>
+    </div>
+  </div>
+
+  <div class="chat_popup_input" fxFlex="15" fxLayout="row" fxLayoutAlign="start center">
+    <div class="chat_input_bar" fxFlex="80" fxLayout="row" fxLayoutAlign="space-around stretch">
+      <form class="chat_input_form" fxFlex="90" fxLayout="row" fxLayoutAlign="stretch stretch">
+        <input fxFlex="fill" class="chat_input_form_input" placeholder="New message..." [(ngModel)]="this.chatInputText"
+          name="chatInputText">
+      </form>
+    </div>
+    <div class="chat_input_button clickable" fxFlex="20" fxLayout="row" fxLayoutAlign="center center">
+      <mat-icon>send</mat-icon>
+    </div>
+  </div>
+
+</div>
+
+<div class="chat-popup-minimized clickable" *ngIf="!chatPopupExpanded" fxLayout="column" fxLayoutAlign="start stretch"
+  (click)="toggleChatExpanded()">
+  <div class="chat_popup_title_minimized" fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+    <div fxFlex="10" class="active_indicator_container" fxLayout="column" fxLayoutAlign="center center">
+      <div class="active_indicator">
+
+      </div>
+    </div>
+    <h4 class="chat_name" fxFlex="80">
+      Malcom Grant
+    </h4>
+  </div>
+</div>

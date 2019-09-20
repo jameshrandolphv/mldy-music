@@ -1,0 +1,25 @@
+.search-bar {
+  background-color: #EFEFEF;
+  margin: 10px;
+  border-radius: 3px;
+  padding: 10px;
+  max-width: 30em;
+  min-width: 1em;
+}
+
+.search-form {
+  background-color: transparent;
+}
+
+.search_form_input {
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  border-right: 1px solid rgb(128, 128, 128);
+}
+
+.search-button {
+  font-size: 1em;
+  padding-left: 5px;
+  padding-top: 5px;
+}

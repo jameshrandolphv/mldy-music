@@ -1,0 +1,49 @@
+<div class="container" fxLayout="column" fxLayoutAlign="start stretch" fxFlex="100" >
+  <app-nav-bar class="navbar" fxLayout="row" fxFlex="7" fxLayoutAlign="center stretch" ></app-nav-bar>
+<div class="profile" fxLayout="row" fxLayoutAlign="start stretch">
+    <div class="my_tracks" fxLayout="column" fxFlex="70">
+      <h1>Upload Track</h1>
+      
+      <div class="toggle" fxLayout="row" fxLayoutAlign="start center">
+          <mat-button-toggle-group name="group" aria-label="toggles">
+              <mat-button-toggle value="left">Independent</mat-button-toggle>
+              <mat-button-toggle value="right">Collaborations</mat-button-toggle>
+          </mat-button-toggle-group> 
+          
+      </div>
+    <div class="content" fxLayout="column" fxLayoutAlign="center center">
+      <mat-card  fxLayout="column" fxLayoutAlign="center center" >
+        <h3>Post a Track</h3>
+        <mat-form-field>
+            <input matInput placeholder="Title" [(ngModel)]="this.track.title" required>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput placeholder="Track Description" [(ngModel)]="this.track.description"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Comma-separated Tags" [(ngModel)]="this.tags" required>
+        </mat-form-field>
+        <input type="file" fxFlex="fill"  class="api_form_input" accept=".wav, .mp3"
+          name="trackFile" id="audio-file" enctype="multipart/form-data">
+      </mat-card>
+    </div>   
+    <div class="publish" fxLayout="row" fxLayoutAlign="center center">
+        
+      <button mat-button  id="cancel clickable" [ngClass]="{'page_selected':this.router.url==='/profile'}" routerLink="/profile">Cancel</button>
+      <button mat-raised-button fxLayoutAlign="center center" id="publish" (click)="postTrackWithId()">Publish</button>
+    </div>
+  </div>
+  <div class="side_profile" fxLayout="column" fxLayoutAlign="start center" fxFlex="30">
+    <button mat-button id="edit">Edit</button>
+    <i class="profile-pic fas fa-user fa-5x"></i>
+    <h3>{{this.user.firstName}} {{this.user.lastName}}</h3>
+    <p>{{this.user.primaryRole}}</p>
+    <p>{{this.user.location}}</p>
+    <div class="about" fxLayout="column" fxLayoutAlign="start stretch">
+      <h2>About</h2>
+      <p>{{this.user.firstName}} is a {{this.user.primaryRole}} from {{this.user.location}}.</p>
+    </div>
+
+  </div>
+  </div>
+</div>

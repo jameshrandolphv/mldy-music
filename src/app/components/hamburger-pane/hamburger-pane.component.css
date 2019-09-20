@@ -1,0 +1,23 @@
+.pane {
+  background-color: #1f1f1f;
+  color: #e1e1e1;
+}
+
+.icon  {
+  height: 2em;
+  width: auto;
+}
+
+.navbar_text {
+  color: #FFFFFF;
+  font-weight: 200;
+  font-size: 1.2em;
+}
+
+.white_bar {
+  background-color: #EFEFEF;
+  border-radius: 8px;
+  width: 1.5em;
+  height: 0.2em;
+  margin: 2px;
+}

@@ -1,0 +1,20 @@
+<div class="create-account" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card fxLayout="column" fxFlex="40" fxFlex.lt-sm="80">
+    <h3>Post a Track</h3>
+    
+    <form class="api_form" fxLayout="row wrap" fxLayoutAlign="start center">
+      <input fxFlex="fill" class="api_form_input" placeholder="Track Title" [(ngModel)]="this.track.title" name="title"
+        (keyup.enter)="postTrackWithId()">
+      <textarea fxFlex="fill" class="api_form_input" placeholder="Track Description"
+        [(ngModel)]="this.track.description" name="description" (keyup.enter)="postTrackWithId()"></textarea>
+      <input fxFlex="fill" class="api_form_input" placeholder="Tags (comma-separated)" [(ngModel)]="this.tags"
+        name="tags" (keyup.enter)="postTrackWithId()">
+      <h3>File</h3>
+      <input type="file" fxFlex="fill" class="api_form_input"
+        name="trackFile" [(ngModel)]="this.file" id="audio-file" enctype="multipart/form-data">
+    </form>
+
+    <button mat-raised-button color="primary" (click)="postTrackWithId()">Post Track</button>
+
+  </mat-card>
+</div>

@@ -1,0 +1,54 @@
+
+<div class="track-container"  fxLayout="row" fxLayoutAlign="center center" *ngIf="this.userLoaded && this.track.title.toUpperCase().includes(this.searchService.searchText.toUpperCase())">
+    
+  <div *ngIf="this.track.userVisible" class="left-column" fxLayout="column" fxLayoutAlign="center center">
+        <div id="author" class="clickable" (click)="visitUser()">
+            {{this.user.firstName}} {{this.user.lastName}}
+          </div>
+        <i class="profile fas fa-user fa-5x" fxShow.lt-sm=false ></i>
+        <i class="profile fas fa-user fa-3x" fxShow.lt-sm=true fxShow=false ></i>
+
+        <button *ngIf="!this.followed" id="button" mat-raised-button (click)="follow()">Follow</button>
+        <button *ngIf="this.followed" id="button" mat-button (click)="unFollow()">Unfollow</button>
+
+       <!-- <button mat-raised-button fxLayoutAlign="center center" id="connect" *ngIf=!this.following (click)= "followUser()">Follow</button>
+        <button mat-raised-button fxLayoutAlign="center center" id="connect" *ngIf=this.following (click) = "followUser()">Unfollow</button>
+      -->
+    </div>
+
+  <div class="right-column" fxLayout="column">
+        <div *ngIf="this.track.userVisible" id="author-info">
+          <small>{{this.user.primaryRole}} from {{this.user.location}}</small>
+        </div>
+
+      <div class="track">
+          <div class="length">
+            <i class="lplay fas fa-play"></i>
+            {{this.track.views}}
+          </div>
+          
+          <div class="name">{{this.track.title}}
+              <div class="date">{{this.date.getMonth()}}/{{this.date.getDate()}}/{{this.date.getFullYear()}}</div>
+          </div>
+
+          <div class="play" fxLayout="row" fxLayoutAlign="left center">
+              <i [ngClass]="{'fas fa-2x':true, 'fa-play': !this.toggle, 'fa-pause':this.toggle}" 
+                (click)="this.toggleTrack()"id ="play-button" ></i>
+              <!-- <i *ngFor="let w of this.waves" class="wave fas fa-align-center fa-3x fa-rotate-90"></i> -->
+              <div class="progress" fxFlex="90" fxLayout="row" fxLayoutAlign="start stretch">
+                <div class="elapsed" [fxFlex]="this.getElapsed()"></div>
+                <div class="duration" [fxFlex]="this.getRemaining()"></div>
+              </div>
+              <h3 class="elapsedText">{{this.elapsed}}</h3>
+          </div>
+        </div>
+      
+        <div class="track-info" fxLayout="row" fxLayoutAlign="left center">
+          <div id="heart-container" class="clickable">
+            <div [ngClass]="{'icon':true, 'heart': !this.user.likedTrackIds.includes(this.track._id), 'heart-solid': this.user.likedTrackIds.includes(this.track._id)}" (click)="this.likeTrack()">
+            </div>
+          </div>
+            <div class="tags" *ngFor="let tag of this.track.tags" fxLayout="row" fxLayoutAlign="center center">{{tag}}</div>
+        </div>
+  </div>
+</div>

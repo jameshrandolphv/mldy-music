@@ -1,0 +1,16 @@
+.side-panel {
+    background-color: #4d4d4d;
+    color: #ffffff;
+}
+
+.contact-card:hover {
+    background-color: #575757;
+}
+
+mat-card-actions {
+    margin: 15px;
+}
+
+.admin-container {
+    height: 100%;
+}

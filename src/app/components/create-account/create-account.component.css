@@ -1,0 +1,21 @@
+mat-card {
+  border: 1px solid rgb(223, 223, 223);
+  margin: 1em;
+  text-align: center;
+}
+
+.delete {
+  color: rgb(168, 28, 28);
+}
+
+.start {
+  margin-top: 2vh;
+  margin-left: 1vw;
+  background-color: #7A76A9;
+  color: white;
+}
+.start1 {
+  margin-top: 2vh;
+  background-color: #7A76A9;
+  color: white;
+}

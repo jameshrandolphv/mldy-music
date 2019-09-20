@@ -1,0 +1,69 @@
+<div class="navbar" fxLayout="row" fxLayoutAlign="start stretch" fxFlex="100">
+  <!-- <h2 class="" routerLink="/" (click)="">Home</h2> -->
+
+  <div class="navbar-left" fxLayout="row" fxLayoutAlign="start stretch" >
+    <div class="navbar_item clickable" fxLayout="column" >
+      <!-- <img fxShow.lt-md="false" id="logo" src="../../../assets/images/mldy.png" fxFlex="100"> -->
+      <img id="logo" src="../../../assets/images/mldy-logo-converted.svg">
+      <div fxShow.lt-sm="true" fxShow="false" fxLayout="column" fxLayoutAlign="center center" fxFlex="100" routerLink="/hamburger-pane">
+        <div class="white_bar"></div>
+        <div class="white_bar"></div>
+        <div class="white_bar"></div>
+      </div>
+    </div>
+
+    <div fxShow.lt-sm="false"
+      [ngClass]="{'navbar_item color_on_hover':true, 'page_selected':this.router.url==='/discover'||this.router.url==='/'}"
+      class="navbar_item color_on_hover clickable" fxLayout="row" fxLayoutAlign="center center" routerLink="/discover">
+      <h2 class="navbar_text">Discover</h2>
+    </div>
+
+    <div fxShow.lt-sm="false"
+      [ngClass]="{'navbar_item color_on_hover':true, 'page_selected':this.router.url==='/following'}"
+      class="navbar_item color_on_hover clickable" fxLayout="row" fxLayoutAlign="center center" routerLink="/following">
+      <h2 class="navbar_text">Following</h2>
+    </div>
+
+  </div>
+
+  <div class="navbar_center" fxLayout="row" fxLayoutAlign="stretch stretch" fxFlex="fill">
+
+    <app-search-bar fxFlex="100"></app-search-bar>
+
+  </div>
+
+  <div fxShow.lt-sm="false" class="navbar-right" fxLayout="row" fxLayoutAlign="space-around stretch">
+
+
+    <div fxLayout="column" [ngClass]="{'page_selected':this.router.url==='/profile' || this.router.url==='/upload'}"
+      class="navbar_item color_on_hover clickable" fxLayoutAlign="center" routerLink="/profile">
+      <div fxLayout="column" fxLayoutAlign="center center">
+          <i class="fas fa-user"></i>
+      </div>
+    </div>
+
+    <div fxLayout="column"  
+    class="navbar_item color_on_hover clickable" fxLayoutAlign="center" >
+      <div fxLayout="column" fxLayoutAlign="center center">
+          <i class="fas fa-envelope"></i>
+      </div>
+    </div>
+
+    <div fxLayout="column" [ngClass]="{'page_selected':this.router.url==='/notifications'}"
+    class="navbar_item color_on_hover clickable" fxLayoutAlign="center" routerLink="/notifications">
+      <div fxLayout="column" fxLayoutAlign="center center">
+          <i class="fas fa-bell"></i>
+      </div>
+    </div>
+
+    <div fxLayout="column" [ngClass]="{'page_selected':this.router.url==='/settings'}"
+    class="navbar_item color_on_hover clickable" fxLayoutAlign="center" routerLink="/settings">
+      <div fxLayout="column" fxLayoutAlign="center center">
+          <i class="fas fa-cog"></i>
+      </div>
+    </div>
+    <div fxLayout="column" class="navbar_item" fxLayoutAlign="center">
+      <button mat-raised-button (click)="logout()" color="#7A76A9">Logout</button>
+    </div>
+  </div>
+</div>

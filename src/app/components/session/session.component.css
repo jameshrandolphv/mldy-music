@@ -1,0 +1,11 @@
+.session {
+    padding: 1em;
+    border-top: 1px #4f4f4f solid;
+}
+
+.span-item {
+    font-family: 'Courier New', Courier, monospace;
+    color: #972d2d;
+    font-size: 16px;
+    font-style: bold;
+}

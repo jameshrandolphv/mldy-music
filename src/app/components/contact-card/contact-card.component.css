@@ -1,0 +1,29 @@
+.online-bulb {
+  background: #588C4B;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.offline-bulb {
+  background: #656565;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.unread-bulb {
+  background: #FFC300;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.icon {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.contact-card:hover {
+  background-color: #575757;
+}

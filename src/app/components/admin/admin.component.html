@@ -1,0 +1,23 @@
+<div class="admin-container" fxLayout="row" fxLayoutAlign="start stretch">
+  <div class="side-panel" fxFlex="20" fxLayout="column" fxLayoutAlign="space-around center">
+    <h1 style="margin-left: 20px">Admin Tools</h1>
+
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="this.getAllUsers(); table.toTable()">Get All Users</button>
+    </mat-card-actions>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="this.getAllTracks(); table.toTable()">Get All Tracks</button>
+    </mat-card-actions>
+
+    <mat-card-actions>
+      <button mat-raised-button (click)="logout()" color="primary">Logout</button>
+    </mat-card-actions>
+  </div>
+
+  <div fxFlex="fill" style="background: #EFEFEF">
+    <app-table [input]="this.request" #table></app-table>
+  </div>
+
+  
+</div>

@@ -1,0 +1,18 @@
+<mat-dialog-content>
+  <div fxLayout="column" fxLayoutAlign="center center">
+        <button mat-icon-button mat-dialog-close 
+          class="x fa fa-times" fxFlexAlign="end" aria-hidden="true" >
+        </button>
+        <mat-card-title>Sign In</mat-card-title>
+        <hr>
+        <mat-form-field  >
+            <input matInput  placeholder="Email" [(ngModel)]="email" required>
+        </mat-form-field>
+        <mat-form-field  >
+            <input matInput type="password" placeholder="Password" [(ngModel)]="password" required>
+        </mat-form-field>
+        <mat-card-actions>
+            <button mat-raised-button class="start" (click)="login()">Start Collaborating</button>
+        </mat-card-actions> 
+  </div>
+</mat-dialog-content>

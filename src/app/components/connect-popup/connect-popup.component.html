@@ -1,0 +1,59 @@
+<mat-dialog-content id="profile-container" fxLayout="row" *ngIf="this.everythingLoaded">
+    <div class="profile" flexLayout="column">
+        <i class="profile-icon fas fa-user fa-5x"></i>
+        <div id="user">{{this.user.firstName}} {{this.user.lastName}}</div>
+        <div id="role">{{this.user.primaryRole}}</div>
+        <div id="location">{{this.user.location}}</div>
+    </div>
+    
+    <div class="about" fxLayout="column">
+        <button mat-icon-button mat-dialog-close
+            class="x fa fa-times" aria-hidden="true">
+        </button>
+        <div id="title">About</div>
+        <p>Important info here...</p>
+        <hr>
+        <p id="highlighted-track">Highlighted Track</p>
+          <div class="track" flexLayout="column" >
+            
+            <div class="length">
+                <i class="lplay fas fa-play"></i> 
+                <!-- {{this.track.views}} -->
+              <!-- {{this.track.lengthInSeconds}} --> 
+              <div class="progress" fxLayout="row" fxLayoutAlign="left center"></div>
+            </div>
+            
+            <div class="name">{{this.track.title}}
+              <div class="date">{{this.track.datePosted}}</div>
+            </div>
+            
+            <div class="play" fxLayout="row" fxLayoutAlign="right center">
+                <i [ngClass]="{'fas fa-2x':true, 'fa-play': !this.toggle, 'fa-pause':this.toggle}" 
+                (click)="this.toggleTrack()"id ="play-button" ></i>
+              <i *ngFor="let w of this.waves" class="wave fas fa-align-center fa-3x fa-rotate-90"></i>
+                <!-- <i [ngClass]="{'fas fa-2x':true, 'fa-play': !this.toggle, 'fa-pause':this.toggle}" (click)="this.toggleTrack()"id ="play-button" ></i>
+                <i class="wave fas fa-align-center fa-3x fa-rotate-90"></i> -->
+            </div>
+    
+          </div>
+    </div>
+</mat-dialog-content>
+
+<hr>
+
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="space-around center">
+  <button *ngIf="!this.followed" id="button" mat-raised-button (click)="follow()">Follow</button>
+  <button *ngIf="this.followed" id="button" mat-button color="warn" (click)="unFollow()">Unfollow</button>
+  <span>- or -</span>
+  <div class="right" fxLayout="column" fxLayoutAlign="center center">
+    <!-- FUTURE TODO: when implementing the text box, use angulars User Input, binding
+    to user input events. onClickMe -->
+      <!-- <mat-form-field> -->
+        <textarea ng-model="message">Add Message...</textarea>
+          <!-- <input matInput [(ngModel)]="text" placeholder="Add message..."> -->
+      <!-- </mat-form-field> -->
+      <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+      <!-- a should be used when navigating, button used for actions -->
+      <a id="button2" mat-raised-button (click)="closeDialog()" >Collaborate</a>
+  </div>
+</mat-dialog-actions>

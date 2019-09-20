@@ -1,0 +1,26 @@
+<div  fxLayout="column" fxLayoutAlign="center center">
+  <button mat-icon-button mat-dialog-close class="x fa fa-times" aria-hidden="true"></button>
+  <mat-card-title>Edit</mat-card-title>
+  <mat-form-field>
+      <input matInput placeholder="First Name" [(ngModel)]="this.user.firstName" required>
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Last Name" [(ngModel)]="this.user.lastName" required>
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Primary Role" [(ngModel)]="this.user.primaryRole" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Secondary Role" [(ngModel)]="this.user.sencondaryRole" >
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="About" [(ngModel)]="this.user.about" ></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Email" [(ngModel)]="this.user.email" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Location" [(ngModel)]="this.user.location" >
+  </mat-form-field>
+    <button mat-raised-button (click)="putUser()" style="background-color: #7A76A9; color: white;">Save Changes</button>
+</div>

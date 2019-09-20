@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<div class="app" id="app-window" fxLayout="column" fxLayoutAlign="start stretch">
+
+  <div class="app-body" fxFlex="fill" fxLayout="column" fxLayoutAlign="start stretch">
+
+    <!-- TODO: remove nav-bar from app-component -->
+    <!-- <app-nav-bar *ngIf="userSignedIn" class="navbar" fxLayout="row" fxLayoutAlign="center stretch"></app-nav-bar> -->
+
+    <!-- <div *ngIf="userSignedIn" class="router-outlet" fxFlex="fill">
+      <router-outlet></router-outlet>
+    </div> -->
+    <router-outlet></router-outlet>
+
+    <!-- <div *ngIf="!userSignedIn" fxFlex="fill">
+      <app-landing-page></app-landing-page>
+    </div> -->
+    <!-- <app-side-panel></app-side-panel> -->
+
+  </div>
+
+</div>             

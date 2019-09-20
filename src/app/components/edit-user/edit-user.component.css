@@ -1,0 +1,9 @@
+.x {
+    align-self: flex-end;
+    margin: 0;
+    height: 2vh;
+}
+
+mat-form-field {
+    width: 20vw;
+}

@@ -1,0 +1,13 @@
+<div fxFlex="100" fxLayout="column" fxLayoutAlign="start stretch">
+  <h2>Active Sessions</h2>
+  <div class="session" *ngFor="let s of this.sessions" fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex="50" fxLayout="column" fxLayoutAlign="space-between start">
+      <div><span>IP Address: {{s.ip}}</span></div>
+      <div><span>Location: {{s.location}}</span></div>
+      <div><span>Last Accessed: {{s.lastAccess}}</span></div>
+    </div>
+    <div fxFlex="50" fxLayout="column" fxLayoutAlign="center center">
+        <button mat-raised-button color="warn" (click)="this.deleteSession(s.ip);">Remove</button>
+    </div>
+  </div>
+</div>

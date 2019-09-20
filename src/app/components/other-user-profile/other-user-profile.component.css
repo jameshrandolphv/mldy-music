@@ -1,0 +1,76 @@
+.profile {
+  height: 100%;
+  width: 100%;
+  color: #4D4D4D;
+}
+.my_tracks {
+  height: 100%;
+}
+.side_profile {
+  margin: 1vh 1vh;
+  height:100vh;
+  border-left: 1px solid #B4B4B4; 
+}
+
+h1 {
+  margin: 5vh 5vh;
+}
+
+.toggle {
+  margin-left: 5vw;
+  height: 5vh;
+}
+
+#upload {
+  height: 4vh;
+  width: 10vw;
+  min-width: 80px;
+  max-width: 100px;
+  min-height: 30px;
+  margin-left: 50%;
+  background-color: #7A76A9;
+  color: white;
+}
+.content , .about{
+  border-top: 1px solid #B4B4B4;
+  margin-top: 2vh;
+}
+
+#edit {
+  margin-left: 16vw;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+
+h3 {
+  margin: 0 auto;
+  margin-top: 5vh;
+}
+p {
+  margin: 0 auto;
+  margin-top: 1vh;
+  font-style: italic;
+}
+.about p {
+  font-style: normal;
+  margin: 0 auto;
+}
+h2 {
+  margin-top: 0vh;
+}
+
+.track {
+  margin: 1em;
+  width: 60vw;
+}
+
+
+.navbar {
+  height: 3.5em;
+  min-height: 55px;
+}
+
+#button {
+  background-color: #7A76A9;
+  color: white;
+}

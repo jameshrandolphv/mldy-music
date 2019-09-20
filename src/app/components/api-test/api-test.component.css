@@ -1,0 +1,38 @@
+.api-test {
+  padding: 10px;
+  height: 100%;
+}
+
+.item {
+  border-left: 1px solid rgb(27, 109, 47);
+  padding-left: 2em;
+  margin-left: 2em;
+}
+
+mat-card {
+  border: 1px solid rgb(223, 223, 223);
+  margin: 1em;
+}
+
+mat-card:hover {
+  border: 1px solid rgb(153, 153, 153);
+}
+
+.api_form {
+  background-color: transparent;
+  margin-bottom: 1em;
+}
+
+.api_form_input {
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  font-weight: 400;
+  color: rgb(43, 43, 43);
+  padding: 0.5em;
+  margin-bottom: 0.7em;
+}
+
+.delete {
+  color: rgb(168, 28, 28);
+}

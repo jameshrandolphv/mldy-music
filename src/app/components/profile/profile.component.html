@@ -1,0 +1,37 @@
+<div class="container" fxLayout="column" fxLayoutAlign="start stretch" fxFlex="100" *ngIf="this.everythingLoaded">
+  <app-nav-bar class="navbar" fxLayout="row" fxFlex="7" fxLayoutAlign="center stretch"></app-nav-bar>
+  <div class="profile" fxLayout="row" fxFlex="100" fxLayoutAlign="start stretch">
+
+    <div class="my_tracks" fxLayout="column" fxFlex="70">
+      <h1>My Tracks</h1>
+      <div class="toggle" fxLayout="row" fxLayoutAlign="start center">
+        <mat-button-toggle-group name="group" aria-label="toggles">
+          <mat-button-toggle value="left">Work</mat-button-toggle>
+          <mat-button-toggle value="right">Collabs</mat-button-toggle>
+        </mat-button-toggle-group>
+        <button mat-raised-button fxLayoutAlign="center center" id="upload" routerLink="/upload">
+          <i class="plus fas fa-plus"></i>
+          Upload</button>
+      </div>
+      <div class="content" fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="column" fxLayoutAlign="start stretch" fxFlex.lt-md="100">
+          <app-track class="track" *ngFor="let track of this.tracks" [track]="track" ></app-track>
+        </div>
+      </div>
+
+    </div>
+    <div class="side_profile" fxLayout="column" fxLayoutAlign="start center" fxFlex="30">
+      <button mat-button id="edit" (click)="openEditDialog()">Edit</button>
+      <i class="profile-pic fas fa-user fa-5x"></i>
+      <h3>{{this.user.firstName}} {{this.user.lastName}}</h3>
+      <p>{{this.user.primaryRole}}</p>
+      <p>{{this.user.location}}</p>
+      <div class="about" fxLayout="column" fxLayoutAlign="start stretch">
+        <h2>About</h2>
+        <p>{{this.user.firstName}} is a {{this.user.primaryRole}} from {{this.user.location}}.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>

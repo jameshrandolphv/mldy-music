@@ -1,0 +1,80 @@
+<mat-dialog-content>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <button mat-icon-button mat-dialog-close 
+          class="x fa fa-times" fxFlexAlign="end" aria-hidden="true" >
+        </button>
+        <mat-card-title>Create an Account</mat-card-title>
+        <hr>
+
+        <!-- <i [ngClass]="{'part-one':true, 'part-one': !this.toggle, 
+      'part-two': this.toggle}" (click)="this.toggleTrack()"></i> -->
+
+        <div *ngIf = "!this.toggle" fxLayout="column" fxLayoutAlign="center center">
+          
+            <mat-form-field>
+                <input matInput  placeholder="First Name" [(ngModel)]="this.user.firstName" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Last Name" [(ngModel)]="this.user.lastName" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Email" [(ngModel)]="this.user.email" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Location" [(ngModel)]="this.user.location" required>
+            </mat-form-field>
+            <mat-card-actions>
+                <button mat-raised-button class="start1" 
+                (click)="checkValid()">Next</button>
+            </mat-card-actions> 
+      </div>
+      <div *ngIf="this.toggle" fxLayout="column">
+          <mat-form-field>
+              <input matInput placeholder="Primary Role" [(ngModel)]="this.user.primaryRole" required>
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput placeholder="Secondary Role" [(ngModel)]="this.user.secondaryRole">
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput placeholder="Beta Key" [(ngModel)]="this.betaKey" required>
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput type="password" placeholder="Password" [(ngModel)]="this.password" required>
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput type="password"  placeholder="Confirm Password" [(ngModel)]="this.confirmPassword" required>
+          </mat-form-field>
+      
+          <mat-card-actions>
+              <button mat-stroked-button class="back" (click)="this.toggle=!this.toggle">Go back</button>
+              <button mat-raised-button class="start" (click)="postUser()">Start Collaborating</button>
+          </mat-card-actions> 
+      </div>
+  </div>
+  <!-- <div class="create-account" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card fxLayout="column" fxFlex="40" fxFlex.lt-sm="80">
+      <h3>Create an Account</h3>
+      <form class="api_form" fxLayout="row wrap" fxLayoutAlign="start center">
+        <input fxFlex="fill" class="api_form_input" placeholder="First Name" [(ngModel)]="this.user.firstName"
+          name="firstName" (keyup.enter)="postUserWithId()">
+        <input fxFlex="fill" class="api_form_input" placeholder="Last Name" [(ngModel)]="this.user.lastName"
+          name="lastName" (keyup.enter)="postUserWithId()">
+        <input fxFlex="fill" class="api_form_input" placeholder="Email" [(ngModel)]="this.user.email" name="email"
+          (keyup.enter)="postUserWithId()">
+        <input fxFlex="fill" class="api_form_input" placeholder="Primary Role" [(ngModel)]="this.user.primaryRole"
+          name="primaryRole" (keyup.enter)="postUserWithId()">
+        <input fxFlex="fill" class="api_form_input" placeholder="Secondary Role" [(ngModel)]="this.user.secondaryRole"
+          name="secondaryRole" (keyup.enter)="postUserWithId()">
+        <input fxFlex="fill" class="api_form_input" placeholder="Beta Key" [(ngModel)]="this.betaKey"
+          name="beta" (keyup.enter)="postUserWithId()">
+        <input type="password" fxFlex="fill" class="api_form_input" placeholder="Password" [(ngModel)]="this.password"
+          name="pass" (keyup.enter)="postUserWithId()">
+        <input type="password" fxFlex="fill" class="api_form_input" placeholder="Confirm Password" [(ngModel)]="this.confirmPassword"
+          name="confirmPass" (keyup.enter)="postUserWithId()">
+      </form>
+
+      <button mat-raised-button color="primary" (click)="postUser()">Get Started</button>
+
+    </mat-card>
+  </div> -->
+</mat-dialog-content>

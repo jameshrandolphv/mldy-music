@@ -1,0 +1,22 @@
+.app {
+  background-color: rgb(243, 243, 243);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.app-body {
+  z-index: 1;
+}
+
+.navbar {
+  height: 3.5em;
+  min-height: 55px;
+}
+
+.router {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}

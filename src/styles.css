@@ -1,0 +1,41 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+app-root {
+  width: 100%;
+  height: 100%;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.router {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+*:focus {
+  outline: none;
+}
+
+h4, h5, h6 {
+  font-weight: 400;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+}

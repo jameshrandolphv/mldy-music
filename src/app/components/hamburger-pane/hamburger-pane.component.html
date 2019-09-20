@@ -1,0 +1,44 @@
+<div class="pane" fxLayout="column" fxLayoutAlign="start stretch">
+
+
+  
+
+  <div fxLayout="row" fxLayoutAlign="space-around center" fxFlex="10">
+    <div class="navbar_item clickable" fxLayout="column" >
+      <img fxShow.lt-md="false" id="logo" src="../../../assets/images/mldy.png" fxFlex="100">
+      <div fxShow.lt-md="true" fxShow="false" fxLayout="column" fxLayoutAlign="center center" fxFlex="100" routerLink="/discover">
+        <div class="white_bar"></div>
+        <div class="white_bar"></div>
+        <div class="white_bar"></div>
+      </div>
+    </div>
+    
+    <div class="navbar_item color_on_hover clickable" fxLayout="row" fxLayoutAlign="center center" routerLink="/discover">
+      <h2 class="navbar_text">Discover</h2>
+    </div>
+
+    <div class="navbar_item color_on_hover clickable" fxLayout="row" fxLayoutAlign="center center" routerLink="/following">
+      <h2 class="navbar_text">Following</h2>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-around stretch" fxFlex="fill">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <img class="icon clickable" src="../../../assets/images/profile-small.png" fxFlex="100" routerLink="/profile">
+      </div>
+
+      <!-- <div fxLayout="column" fxLayoutAlign="center center">
+        <img class="icon" src="../../../assets/images/messages-new.png" fxFlex="100">
+      </div>
+
+    
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <img class="icon" src="../../../assets/images/notification-new.png" fxFlex="100">
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <img class="icon" src="../../../assets/images/settings.png" fxFlex="100">
+      </div> -->
+  </div>
+
+</div>

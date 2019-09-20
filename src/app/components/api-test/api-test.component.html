@@ -1,0 +1,216 @@
+<div class="api-test" fxLayout="column" fxLayoutAlign="start stretch">
+
+  <mat-card>
+    <h2 class="clickable" (click)="toggleUsersVisible()">Users</h2>
+    <div *ngIf="usersVisible">
+      <mat-card>
+        <h3>Get</h3>
+        <button mat-raised-button color="primary" (click)="getUsers()">Get All Users</button>
+        <div class="item" *ngFor="let user of this.users">
+          <h4>{{user.firstName}} {{user.lastName}}</h4>
+          <p>{{user._id}}</p>
+          <p>{{user.primaryRole}}</p>
+          <mat-icon (click)="this.deleteUserWithId(user._id)" class="clickable delete">delete</mat-icon>
+        </div>
+      </mat-card>
+      <mat-card>
+        <h3>Get with ID</h3>
+        <form class="api_form" fxLayout="row" fxLayoutAlign="stretch stretch">
+          <input fxFlex="fill" class="api_form_input" placeholder="Id" [(ngModel)]="this.userId" name="userId"
+            (keyup.enter)="getUserWithId()">
+        </form>
+
+        <button mat-raised-button color="primary" (click)="getUserWithId()">Get User with Id</button>
+
+        <div class="item">
+          <h4>{{this.gottenUser.firstName}} {{this.gottenUser.lastName}}</h4>
+          <p>{{this.gottenUser._id}}</p>
+          <p>{{this.gottenUser.email}}</p> 
+          <p>{{this.gottenUser.primaryRole}}</p>
+        </div>
+      </mat-card>
+      <mat-card>
+        <h3>Post</h3>
+        <form class="api_form" fxLayout="row wrap" fxLayoutAlign="start center">
+          <input fxFlex="fill" class="api_form_input" placeholder="First Name" [(ngModel)]="this.user.firstName"
+            name="firstName" (keyup.enter)="postUserWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Last Name" [(ngModel)]="this.user.lastName"
+            name="lastName" (keyup.enter)="postUserWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Email" [(ngModel)]="this.user.email" name="email"
+            (keyup.enter)="postUserWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Primary Role" [(ngModel)]="this.user.primaryRole"
+            name="primaryRole" (keyup.enter)="postUserWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Secondary Role" [(ngModel)]="this.user.secondaryRole"
+            name="secondaryRole" (keyup.enter)="postUserWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Location" [(ngModel)]="this.user.location"
+            name="location" (keyup.enter)="postUserWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Liked Track Id"
+            [(ngModel)]="this.user.likedTrackIds[0]" name="likedTrackIds" (keyup.enter)="postUserWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Collaborator Id"
+            [(ngModel)]="this.user.currentCollaboratorIds[0]" name="currentCollaboratorIds"
+            (keyup.enter)="postUserWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Connection Id"
+            [(ngModel)]="this.user.connectionIds[0]" name="connectionIds" (keyup.enter)="postUserWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Following Id"
+            [(ngModel)]="this.user.followingIds[0]" name="followingIds" (keyup.enter)="postUserWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Follower Id" [(ngModel)]="this.user.followerIds[0]"
+            name="followerIds" (keyup.enter)="postUserWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Signup Date" [(ngModel)]="this.user.signUpDate[0]"
+            name="signUpDate" (keyup.enter)="postUserWithId()">
+        </form>
+
+        <button mat-raised-button color="primary" (click)="postUser()">Post User</button>
+
+        <div class="item">
+          <h4>{{this.postedUser.firstName}} {{this.postedUser.lastName}}</h4>
+          <p>{{this.postedUser._id}}</p>
+          <p>{{this.postedUser.email}}</p>
+          <p>{{this.postedUser.primaryRole}}</p>
+        </div>
+      </mat-card>
+      <mat-card>
+        <h3>Put</h3>
+        <form class="api_form" fxLayout="row wrap" fxLayoutAlign="start center">
+          <input fxFlex="fill" class="api_form_input" placeholder="Id" [(ngModel)]="this.user._id" name="putId"
+            (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="First Name" [(ngModel)]="this.user.firstName"
+            name="firstName" (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Last Name" [(ngModel)]="this.user.lastName"
+            name="lastName" (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Email" [(ngModel)]="this.user.email" name="email"
+            (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Primary Role" [(ngModel)]="this.user.primaryRole"
+            name="primaryRole" (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Secondary Role" [(ngModel)]="this.user.secondaryRole"
+            name="secondaryRole" (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Location" [(ngModel)]="this.user.location"
+            name="location" (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Liked Track Id"
+            [(ngModel)]="this.user.likedTrackIds[0]" name="likedTrackIds" (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Collaborator Id"
+            [(ngModel)]="this.user.currentCollaboratorIds[0]" name="currentCollaboratorIds" (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Connection Id"
+            [(ngModel)]="this.user.connectionIds[0]" name="connectionIds" (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Following Id"
+            [(ngModel)]="this.user.followingIds[0]" name="followingIds" (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Follower Id" [(ngModel)]="this.user.followerIds[0]"
+            name="followerIds" (keyup.enter)="putUser()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Signup Date" [(ngModel)]="this.user.signUpDate[0]"
+            name="signUpDate" (keyup.enter)="putUser()">
+        </form>
+
+        <button mat-raised-button color="primary" (click)="putUser()">Update User</button>
+
+        <div class="item">
+          <h4>{{this.postedUser.firstName}} {{this.postedUser.lastName}}</h4>
+          <p>{{this.postedUser._id}}</p>
+          <p>{{this.postedUser.email}}</p>
+          <p>{{this.postedUser.primaryRole}}</p>
+        </div>
+      </mat-card>
+    </div>
+  </mat-card>
+
+  <mat-card>
+    <h2 class="clickable" (click)="toggleTracksVisible()">Tracks</h2>
+    <div *ngIf="tracksVisible">
+      <mat-card>
+        <h3>Get</h3>
+        <button mat-raised-button color="primary" (click)="getTracks()">Get All Tracks</button>
+        <div class="item" *ngFor="let track of this.tracks">
+          <h4>{{track.title}}</h4>
+          <p>{{track._id}}</p>
+          <p>{{track.description}}</p>
+          <mat-icon (click)="this.deleteTrackWithId(track._id)" class="clickable delete">delete</mat-icon>
+        </div>
+      </mat-card>
+      <mat-card>
+        <h3>Get with ID</h3>
+        <form class="api_form" fxLayout="row" fxLayoutAlign="stretch stretch">
+          <input fxFlex="fill" class="api_form_input" placeholder="Id" [(ngModel)]="this.trackId" name="trackId"
+            (keyup.enter)="getTrackWithId()">
+        </form>
+
+        <button mat-raised-button color="primary" (click)="getTrackWithId()">Get Track with Id</button>
+
+        <div class="item">
+          <h4>{{this.gottenTrack.title}}</h4>
+          <p>{{this.gottenTrack._id}}</p>
+          <p>{{this.gottenTrack.description}}</p>
+          <p>{{this.gottenTrack.primaryAuthorId}}</p>
+        </div>
+      </mat-card>
+      <mat-card>
+        <h3>Post</h3>
+        <form class="api_form" fxLayout="row wrap" fxLayoutAlign="start center">
+          <input fxFlex="fill" class="api_form_input" placeholder="Content Link" [(ngModel)]="this.track.contentLink"
+            name="firstName" (keyup.enter)="postTrackWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="File Type" [(ngModel)]="this.track.filetype"
+            name="lastName" (keyup.enter)="postTrackWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Length (in seconds)"
+            [(ngModel)]="this.track.lengthInSeconds" name="email" (keyup.enter)="postTrackWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Title" [(ngModel)]="this.track.title"
+            name="primaryRole" (keyup.enter)="postTrackWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Description" [(ngModel)]="this.track.description"
+            name="secondaryRole" (keyup.enter)="postTrackWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Tag" [(ngModel)]="this.track.tags[0]"
+            name="location" (keyup.enter)="postTrackWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Date Posted" [(ngModel)]="this.track.datePosted"
+            name="likedTrackIds" (keyup.enter)="postTrackWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Primary Author ID"
+            [(ngModel)]="this.track.primaryAuthorId" name="currentCollaboratorIds" (keyup.enter)="postTrackWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Secondary Author ID"
+            [(ngModel)]="this.track.secondaryAuthorIds[0]" name="connectionIds" (keyup.enter)="postTrackWithId()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Views" [(ngModel)]="this.track.views" name="views"
+            (keyup.enter)="postTrackWithId()">
+        </form>
+
+        <button mat-raised-button color="primary" (click)="postTrack()">Post Track</button>
+
+        <div class="item">
+          <h4>{{this.postedTrack.title}}</h4>
+          <p>{{this.postedTrack._id}}</p>
+          <p>{{this.postedTrack.description}}</p>
+          <p>{{this.postedTrack.primaryAuthorId}}</p>
+        </div>
+      </mat-card>
+      <mat-card>
+        <h3>Put</h3>
+        <form class="api_form" fxLayout="row wrap" fxLayoutAlign="start center">
+          <input fxFlex="fill" class="api_form_input" placeholder="Id" [(ngModel)]="this.track._id" name="putTrackId"
+            (keyup.enter)="putTrack()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Content Link" [(ngModel)]="this.track.contentLink"
+            name="firstName" (keyup.enter)="putTrack()">
+          <input fxFlex="fill" class="api_form_input" placeholder="File Type" [(ngModel)]="this.track.filetype"
+            name="lastName" (keyup.enter)="putTrack()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Length (in seconds)"
+            [(ngModel)]="this.track.lengthInSeconds" name="email" (keyup.enter)="putTrack()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Title" [(ngModel)]="this.track.title"
+            name="primaryRole" (keyup.enter)="putTrack()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Description" [(ngModel)]="this.track.description"
+            name="secondaryRole" (keyup.enter)="putTrack()">
+          <input fxFlex="fill" class="api_form_input" placeholder="A Tag" [(ngModel)]="this.track.tags[0]"
+            name="location" (keyup.enter)="putTrack()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Date Posted" [(ngModel)]="this.track.datePosted"
+            name="likedTrackIds" (keyup.enter)="putTrack()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Primary Author ID"
+            [(ngModel)]="this.track.primaryAuthorId" name="currentCollaboratorIds" (keyup.enter)="putTrack()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Secondary Author ID"
+            [(ngModel)]="this.track.secondaryAuthorIds[0]" name="connectionIds" (keyup.enter)="putTrack()">
+          <input fxFlex="fill" class="api_form_input" placeholder="Views" [(ngModel)]="this.track.views" name="views"
+            (keyup.enter)="putTrack()">
+        </form>
+
+        <button mat-raised-button color="primary" (click)="putTrack()">Update Track</button>
+
+        <div class="item">
+          <h4>{{this.postedTrack.title}}</h4>
+          <p>{{this.postedTrack._id}}</p>
+          <p>{{this.postedTrack.description}}</p>
+          <p>{{this.postedTrack.primaryAuthorId}}</p>
+        </div>
+      </mat-card>
+    </div>
+  </mat-card>
+
+</div>

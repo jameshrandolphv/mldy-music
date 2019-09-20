@@ -1,0 +1,15 @@
+<div class="search-bar" fxFlex="fill" fxLayout="row" fxLayoutAlign="space-around stretch">
+  <form class="search_form" fxFlex="90" fxLayout="row" fxLayoutAlign="stretch stretch">
+    <input fxFlex="fill" class="search_form_input" placeholder="Search..." [(ngModel)]="this.searchService.searchText"
+      name="searchText">
+  </form>
+  
+  <div fxFlex="10" fxLayout="row" fxLayoutAlign="center center">
+    <div class="search-button clickable">
+      <h3>
+        <mat-icon>search</mat-icon>
+      </h3>
+    </div>
+  </div>
+
+</div>

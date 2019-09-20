@@ -1,0 +1,85 @@
+
+<div class="landing" fxFlex="100" fxLayout="column" fxLayoutAlign="start stretch">
+
+  <div class="navbar" fxLayout="row" fxLayoutAlign="start stretch" fxFlex="7">
+    <!-- <button mat-button>Select</button> -->
+    <div class="logo_container">
+      <img class="logo" src="../../../assets/images/mldy-logo-new.png">
+    </div>
+
+    <div class="right" fxLayout="row" fxLayoutAlign="end center" fxFlex="fill">
+      <div fxShow.lt-sm="false">
+        <button mat-stroked-button (click)="openSignInDialog()">Sign In</button>
+        <button mat-button (click)="openCreateAccountDialog()" 
+        [disabled]="false"  >Create Account</button>
+      </div>
+      <i class="fab fa-twitter-square fa-2x" onClick="parent.open('https://twitter.com/MLDY_Music?ref_src=twsrc%5Etfw')"></i>
+    </div>
+  </div>
+
+  <div class="landing_header" fxLayout="column" fxLayoutAlign="center stretch" fxFlex="50"
+  [ngStyle.lt-sm]="{'height':'200px'}">
+
+    <div class="landing_header_title" fxLayout="row"fxLayoutAlign="center center"  >
+      <h3 [ngStyle.lt-sm]="{'font-size':'4.4vh'}">
+        Experience Collaboration with MLDY Music
+      </h3>
+    </div>
+
+    <div class="landing_header_text" fxLayout="row" fxLayoutAlign="center center">
+      <h4 fxFlex="70" fxFlex.lt-sm="90" [ngStyle.lt-sm]="{'font-size':'2.4vh'}">
+        MLDY Music is a platform for artists to connect and collaborate with other producers and artists.
+        MLDY Music is an easy-to-use web application allowing musicians
+        to find collaborators and showcase their work.
+      </h4>
+    </div>
+
+  </div>
+
+  <div class="landing_content" fxLayout="column" fxLayoutAlign="start stretch" fxFlex="fill">
+
+    <div class="landing_content_row" fxLayout="row" fxLayoutAlign="center center" fxFlex="20">
+      <h4 [ngStyle.lt-sm]="{'font-size':'2.4vh'}">
+        Sign up for email updates
+      </h4>
+    </div>
+
+    <div class="landing_content_row" fxLayout="row" fxLayoutAlign="center center" fxFlex="20">
+
+      <div class="email_bar" fxFlex="30" fxFlex.lt-sm="60" [ngStyle]="{'height':'38px'}"
+      fxLayout="row" fxLayoutAlign="space-around stretch">
+        <form class="email_form" fxFlex="90" fxLayout="row" fxLayoutAlign="stretch stretch">
+          <input fxFlex="fill" class="email_form_input" [ngStyle]="{'font-size':'.8em'}"placeholder="Email" [(ngModel)]="this.email"
+            name="emailText" (keyup.enter)="validateAndPostEmail()">
+        </form>
+      </div>
+
+      <button fxShow.lt-sm="false" mat-button fxFlex="6"  class="submit_email_button clickable" [ngStyle]="{'height':'40px'}"
+        (click)="validateAndPostEmail()">Go</button>
+
+    </div>
+
+    <div fxShow="false" fxShow.lt-sm="true" class="landing_content_row" fxLayout="row" fxLayoutAlign="center center"
+      fxFlex="20">
+
+      <button fxFlex="fill" mat-button fxFlex="60" fxLayoutAlign="center center" [ngStyle]="{'height':'30px'}"
+      [ngStyle]="{'font-size':'.8em'}" class="submit_email_button clickable"
+        (click)="validateAndPostEmail()">Go</button>
+
+    </div>
+    <div class="collab-signup" fxLayoutAlign="center center">
+      <h5>Click <a href="http://bit.ly/MLDYMusicSignUp">
+      here
+      </a> to become one of our first collaborators!</h5>
+    </div>
+    <div class="landing_content_row" fxLayout="row" fxLayoutAlign="center center" fxFlex="20">
+      <h4>
+        {{this.invalidEmailText}}
+      </h4>
+    </div>
+   
+
+  </div>
+
+</div>
+

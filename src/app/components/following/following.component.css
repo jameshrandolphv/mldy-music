@@ -1,0 +1,69 @@
+.following {
+  background-color: #EFEFEF;
+  width: 100vw;
+  height: 100vh;
+}
+
+.page-header {
+  border-bottom: 1px solid rgb(187, 187, 187);
+  padding: 10px;
+  z-index: 100;
+  height: 20vh;
+  margin: 10px 10px 10px 10px;
+  min-height: 150px;
+}
+
+.page-header-option-dropdown {
+  background-color: #262626;
+  border-radius: 5px;
+  border: 1px solid rgba(179, 179, 179, 0.363);
+  box-shadow: 3px 3px 5px rgba(32, 32, 32, 0.253);
+}
+
+.page-header-option-dropdown-option {
+  padding: 0px 10px;
+  border-radius: 5px;
+  color: #EFEFEF;
+}
+
+.page-header-option-dropdown-option:hover {
+  background-color: #1f1f1f;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.chat_popup {
+  right: 27vw;
+  bottom: 0;
+  position: absolute;
+}
+
+.hide_side_panel {
+  right: 26vw;
+  bottom: 67vh;
+  position: absolute;
+  color: grey;
+}
+
+.show_side_panel {
+  right: 0vw;
+  bottom: 67vh;
+  position: absolute;
+  color: grey;
+}
+
+.following-side-panel {
+  /* height: 100%; */
+  /* background-color: #4d4d4d; */
+}
+
+.navbar {
+  height: 3.5em;
+  min-height: 55px;
+}
+
+.track {
+  margin: 1em;
+}
