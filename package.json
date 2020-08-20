@@ -33,7 +33,7 @@
     "@angular/platform-browser-dynamic": "^7.0.0",
     "@angular/router": "^7.0.0",
     "@types/bcrypt": "^3.0.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.4",
     "core-js": "^2.5.4",
